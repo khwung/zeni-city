@@ -100,6 +100,42 @@ body {
   gap: 20px;
 }
 
+.area-card {
+  position: relative;
+  transition: 0.25s ease;
+}
+
+.area-card img {
+  width: 100%;
+  display: block;
+}
+
+.area-card button {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 16px;
+  height: 31px;
+
+  border: none;
+  border-radius: 4px;
+  background: #5a1711;
+  color: #f1e5df;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.area-card:hover {
+  transform: translateY(-6px);
+  filter: brightness(1.18) drop-shadow(0 0 14px rgba(180, 20, 20, 0.65));
+  cursor: pointer;
+}
+
+.area-card:hover button {
+  background: #7a2018;
+  box-shadow: 0 0 14px rgba(180, 20, 20, 0.65);
+}
+
 /* 탈출 루트 */
 .route-grid {
   position: absolute;
@@ -124,7 +160,6 @@ body {
   gap: 14px;
 }
 
-.area-grid img,
 .route-grid img,
 .character-grid img {
   width: 100%;
@@ -132,7 +167,6 @@ body {
   transition: 0.25s ease;
 }
 
-.area-grid img:hover,
 .route-grid img:hover,
 .character-grid img:hover {
   transform: translateY(-6px);
@@ -177,11 +211,11 @@ body {
   line-height: 1.75;
 }
 
-/* 명함 확대 */
+/* 명함 단일 확대 */
 .modal {
   position: fixed;
   inset: 0;
-  z-index: 2000;
+  z-index: 3000;
   display: none;
   align-items: center;
   justify-content: center;
@@ -205,6 +239,81 @@ body {
   max-height: 88vh;
   object-fit: contain;
   filter: drop-shadow(0 0 30px rgba(0, 255, 230, 0.25));
+}
+
+/* 배치 인원 모달 */
+.member-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.member-modal.active {
+  display: flex;
+}
+
+.member-modal-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.member-modal-panel {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, 92vw);
+  max-height: 88vh;
+  overflow-y: auto;
+
+  padding: 28px;
+  border: 1px solid rgba(180, 20, 20, 0.85);
+  background: rgba(5, 5, 5, 0.96);
+  box-shadow: 0 0 40px rgba(160, 0, 0, 0.35);
+}
+
+.member-modal-panel h2 {
+  margin: 0 0 24px;
+  color: #d63b2e;
+  font-size: 24px;
+  border-bottom: 1px solid rgba(150, 0, 0, 0.75);
+  padding-bottom: 14px;
+}
+
+.member-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(180, 20, 20, 0.8);
+  background: rgba(60, 0, 0, 0.7);
+  color: #eee;
+  font-size: 24px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.member-grid img {
+  width: 100%;
+  display: block;
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+.member-grid img:hover {
+  transform: translateY(-6px);
+  filter: brightness(1.18) drop-shadow(0 0 14px rgba(0, 255, 230, 0.35));
 }
 
 /* 모바일 / 태블릿 */
@@ -277,10 +386,12 @@ body {
     gap: 14px;
   }
 
-  .area-grid img,
-  .route-grid img,
-  .character-grid img {
-    width: 100%;
+  .area-card button {
+    left: 18px;
+    right: 18px;
+    bottom: 12px;
+    height: 28px;
+    font-size: 13px;
   }
 
   .world-section {
@@ -309,6 +420,20 @@ body {
   #modalImg {
     width: 96vw;
     max-height: 82vh;
+  }
+
+  .member-modal-panel {
+    width: 94vw;
+    padding: 22px 14px;
+  }
+
+  .member-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .member-modal-panel h2 {
+    font-size: 20px;
   }
 }
 

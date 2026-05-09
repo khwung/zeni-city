@@ -24,10 +24,25 @@
     <img class="template" src="./images/template/template.png" alt="제니시티 템플릿">
 
     <section id="areas" class="area-grid">
-      <img src="./images/areas/area-school.png" alt="제니고등학교">
-      <img src="./images/areas/area-farm.png" alt="스마트팜">
-      <img src="./images/areas/area-armory.png" alt="무기고">
-      <img src="./images/areas/area-hospital.png" alt="중앙병원">
+      <div class="area-card" data-area="school">
+        <img src="./images/areas/area-school.png" alt="제니고등학교">
+        <button>배치 인원 보기</button>
+      </div>
+
+      <div class="area-card" data-area="farm">
+        <img src="./images/areas/area-farm.png" alt="스마트팜">
+        <button>배치 인원 보기</button>
+      </div>
+
+      <div class="area-card" data-area="armory">
+        <img src="./images/areas/area-armory.png" alt="무기고">
+        <button>배치 인원 보기</button>
+      </div>
+
+      <div class="area-card" data-area="hospital">
+        <img src="./images/areas/area-hospital.png" alt="중앙병원">
+        <button>배치 인원 보기</button>
+      </div>
     </section>
 
     <section id="routes" class="route-grid">
@@ -125,22 +140,113 @@
     <img id="modalImg" src="" alt="확대 명함">
   </div>
 
+  <div class="member-modal" id="memberModal">
+    <div class="member-modal-bg"></div>
+    <div class="member-modal-panel">
+      <button class="member-close" type="button">×</button>
+      <h2 id="memberTitle">배치 인원</h2>
+      <div class="member-grid" id="memberGrid"></div>
+    </div>
+  </div>
+
   <script>
+    const characterData = {
+      Doyoon: "./images/characters/Doyoon.png",
+      Soyoon: "./images/characters/Soyoon.png",
+      Yuna: "./images/characters/Yuna.png",
+      Sohyun: "./images/characters/Sohyun.png",
+      Taejun: "./images/characters/Taejun.png",
+      Harin: "./images/characters/Harin.png",
+      Minseok: "./images/characters/Minseok.png",
+      Sehee: "./images/characters/Sehee.png",
+      Seoyoon: "./images/characters/Seoyoon.png",
+      Seokyung: "./images/characters/Seokyung.png",
+      Dahye: "./images/characters/Dahye.png",
+      Jinho: "./images/characters/Jinho.png",
+      Dosik: "./images/characters/Dosik.png",
+      Cheolwoo: "./images/characters/Cheolwoo.png",
+      Miran: "./images/characters/Miran.png",
+      Sarang: "./images/characters/Sarang.png"
+    };
+
+    const areaMembers = {
+      school: {
+        title: "제니고등학교 배치 인원",
+        members: ["Soyoon", "Yuna", "Sohyun", "Taejun", "Minseok", "Sehee"]
+      },
+      farm: {
+        title: "스마트팜 배치 인원",
+        members: ["Doyoon", "Harin", "Dahye", "Miran"]
+      },
+      armory: {
+        title: "무기고 배치 인원",
+        members: ["Dosik", "Doyoon", "Sarang"]
+      },
+      hospital: {
+        title: "중앙병원 배치 인원",
+        members: ["Seoyoon", "Seokyung", "Jinho"]
+      }
+    };
+
     const cards = document.querySelectorAll('.character-grid img');
-    const modal = document.getElementById('cardModal');
+    const cardModal = document.getElementById('cardModal');
     const modalImg = document.getElementById('modalImg');
 
     cards.forEach(card => {
       card.addEventListener('click', () => {
-        modal.classList.add('active');
+        cardModal.classList.add('active');
         modalImg.src = card.src;
         modalImg.alt = card.alt;
       });
     });
 
-    modal.addEventListener('click', () => {
-      modal.classList.remove('active');
+    cardModal.addEventListener('click', () => {
+      cardModal.classList.remove('active');
       modalImg.src = '';
+    });
+
+    const areaCards = document.querySelectorAll('.area-card');
+    const memberModal = document.getElementById('memberModal');
+    const memberTitle = document.getElementById('memberTitle');
+    const memberGrid = document.getElementById('memberGrid');
+    const memberClose = document.querySelector('.member-close');
+
+    areaCards.forEach(areaCard => {
+      areaCard.addEventListener('click', () => {
+        const areaKey = areaCard.dataset.area;
+        const area = areaMembers[areaKey];
+
+        memberTitle.textContent = area.title;
+        memberGrid.innerHTML = "";
+
+        area.members.forEach(name => {
+          const img = document.createElement('img');
+          img.src = characterData[name];
+          img.alt = name;
+          img.addEventListener('click', (event) => {
+            event.stopPropagation();
+            cardModal.classList.add('active');
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+          });
+          memberGrid.appendChild(img);
+        });
+
+        memberModal.classList.add('active');
+      });
+    });
+
+    function closeMemberModal() {
+      memberModal.classList.remove('active');
+      memberGrid.innerHTML = "";
+    }
+
+    memberClose.addEventListener('click', closeMemberModal);
+
+    memberModal.addEventListener('click', (event) => {
+      if (event.target.classList.contains('member-modal-bg')) {
+        closeMemberModal();
+      }
     });
   </script>
 
