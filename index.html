@@ -15,6 +15,10 @@
       <a href="#areas">핵심구역</a>
       <a href="#routes">탈출루트</a>
       <a href="#characters">동료정보</a>
+      <a href="#zombies">변이체</a>
+      <a href="#crafting">제작</a>
+      <a href="#items">아이템</a>
+      <a href="#hound">세력</a>
       <a href="#world">세계관</a>
     </div>
     <a href="#areas" class="start-btn">생존을 시작하라</a>
@@ -26,30 +30,41 @@
     <section id="areas" class="area-grid">
       <div class="area-card" data-area="school">
         <img src="./images/areas/area-school.png" alt="제니고등학교">
-        <button>배치 인원 보기</button>
+        <button>배치 인원, 자원 보기</button>
       </div>
 
       <div class="area-card" data-area="farm">
         <img src="./images/areas/area-farm.png" alt="스마트팜">
-        <button>배치 인원 보기</button>
+        <button>배치 인원, 자원 보기</button>
       </div>
 
       <div class="area-card" data-area="armory">
         <img src="./images/areas/area-armory.png" alt="무기고">
-        <button>배치 인원 보기</button>
+        <button>배치 인원, 자원 보기</button>
       </div>
 
       <div class="area-card" data-area="hospital">
         <img src="./images/areas/area-hospital.png" alt="중앙병원">
-        <button>배치 인원 보기</button>
+        <button>배치 인원, 자원 보기</button>
       </div>
     </section>
 
     <section id="routes" class="route-grid">
-      <img src="./images/routes/route-north-gate.png" alt="북쪽 메인 게이트">
-      <img src="./images/routes/route-south-gate.png" alt="남쪽 메인 게이트">
-      <img src="./images/routes/route-subway.png" alt="지하철 폐선로">
-      <img src="./images/routes/route-bunker.png" alt="수뇌부 비상 벙커">
+      <div class="route-card" data-route="north">
+        <img src="./images/routes/route-north-gate.png" alt="북쪽 메인 게이트">
+      </div>
+
+      <div class="route-card" data-route="south">
+        <img src="./images/routes/route-south-gate.png" alt="남쪽 메인 게이트">
+      </div>
+
+      <div class="route-card" data-route="subway">
+        <img src="./images/routes/route-subway.png" alt="지하철 폐선로">
+      </div>
+
+      <div class="route-card" data-route="bunker">
+        <img src="./images/routes/route-bunker.png" alt="수뇌부 비상 벙커 통로">
+      </div>
     </section>
 
     <section id="characters" class="character-grid">
@@ -57,95 +72,175 @@
       <img src="./images/characters/Soyoon.png" alt="강소윤">
       <img src="./images/characters/Yuna.png" alt="박유나">
       <img src="./images/characters/Sohyun.png" alt="최소현">
-
       <img src="./images/characters/Taejun.png" alt="김태준">
       <img src="./images/characters/Harin.png" alt="송하린">
       <img src="./images/characters/Minseok.png" alt="정민석">
       <img src="./images/characters/Sehee.png" alt="백세희">
-
       <img src="./images/characters/Seoyoon.png" alt="한서윤">
       <img src="./images/characters/Seokyung.png" alt="윤서경">
       <img src="./images/characters/Dahye.png" alt="박다혜">
       <img src="./images/characters/Jinho.png" alt="고진호">
-
       <img src="./images/characters/Dosik.png" alt="장도식">
       <img src="./images/characters/Cheolwoo.png" alt="김철우">
       <img src="./images/characters/Miran.png" alt="이미란">
       <img src="./images/characters/Sarang.png" alt="최사랑">
     </section>
 
+    <section id="zombies" class="content-section">
+      <h2>변이체 <span>INFECTED FILE</span></h2>
+      <div class="zombie-grid" id="zombieGrid"></div>
+    </section>
+
+    <section id="crafting" class="content-section">
+      <h2>제작 <span>CRAFTING SYSTEM</span></h2>
+      <div class="data-box">
+        <h3>[ 제작 재료 ]</h3>
+        <p>고철 / 부품 / 화학물질 / 소모품</p>
+        <p>필요 자원 : 식량 / 물</p>
+      </div>
+
+      <div class="craft-list">
+        <h3>[ 근접 무기 ]</h3>
+        <p>쇠파이프 | 지식1 손재주1 | 고철1 | [C1]</p>
+        <p>못박이 배트 | 지식2 손재주2 | 고철1 소모품1 | [C1]</p>
+        <p>급조 철창 | 지식2 손재주3 | 고철1 소모품1 | [C1]</p>
+        <p>손도끼 | 지식3 손재주4 | 고철2 소모품1 | [C2]</p>
+        <p>마체테 | 지식4 손재주5 | 고철2 소모품1 | [C2]</p>
+        <p>철판 방패 | 지식4 손재주6 | 고철3 소모품1 | [C2/S1]</p>
+
+        <h3>[ 원거리 무기 ]</h3>
+        <p>투척용 창 | 지식2 손재주3 | 고철1 소모품1 | [C1]</p>
+        <p>급조 활 | 지식3 손재주4 | 소모품2 | [C1]</p>
+        <p>화살 묶음(5발) | 지식2 손재주3 | 고철1 소모품1 | [C1]</p>
+        <p>강화 활 | 지식5 손재주6 | 고철1 소모품2 | [C2]</p>
+        <p>급조 석궁 | 지식6 손재주7 | 고철2 부품1 소모품2 | [C2/T1]</p>
+        <p>석궁 볼트(5발) | 지식4 손재주4 | 고철1 소모품1 | [C1]</p>
+        <p>컴파운드 보우 | 지식8 손재주8 | 고철2 부품3 소모품2 | [C3/T1]</p>
+
+        <h3>[ 회복 / 생존 ]</h3>
+        <p>응급 붕대 | 지식1 손재주1 | 소모품1 | [S1]</p>
+        <p>응급 처치 키트 | 지식3 손재주3 | 소모품2 화학물질1 | [S2]</p>
+        <p>진통제 | 지식4 손재주2 | 화학물질2 | [S2]</p>
+        <p>각성제 | 지식5 손재주3 | 화학물질2 소모품1 | [S1/C1]</p>
+
+        <h3>[ 폭발 / 화학 ]</h3>
+        <p>화염병 | 지식2 손재주2 | 화학물질1 소모품1 | [C2]</p>
+        <p>사제 폭탄 | 지식5 손재주5 | 고철1 화학물질2 | [C3]</p>
+        <p>연막탄 | 지식5 손재주4 | 화학물질2 소모품1 | [T1/C1]</p>
+        <p>소음 유인 폭죽 | 지식4 손재주3 | 화학물질1 소모품1 | [T1]</p>
+        <p>독성 병 | 지식6 손재주4 | 화학물질3 | [C2/T1]</p>
+
+        <h3>[ 전자 / 기계 ]</h3>
+        <p>휴대용 배터리팩 | 지식3 손재주4 | 부품2 | [T1]</p>
+        <p>무전기 | 지식4 손재주5 | 부품2 소모품1 | [T2]</p>
+        <p>생체 탐지기 | 지식6 손재주6 | 부품3 | [T2]</p>
+        <p>신호 교란기 | 지식7 손재주6 | 부품3 화학물질1 | [T3]</p>
+        <p>정찰 드론 | 지식8 손재주8 | 부품4 소모품1 | [T3/C2]</p>
+
+        <h3>[ 함정 / 설치 ]</h3>
+        <p>못덫 | 지식2 손재주2 | 고철1 소모품1 | [C1]</p>
+        <p>철사 함정 | 지식3 손재주4 | 고철1 소모품2 | [C1/T1]</p>
+        <p>경보 장치 | 지식4 손재주5 | 부품1 소모품1 | [T1]</p>
+        <p>전기 함정 | 지식7 손재주7 | 부품3 화학물질1 | [C2/T2]</p>
+
+        <h3>[ 차량 ]</h3>
+        <p>차량 응급 수리 | 지식4 손재주5 | 고철2 부품2 | [M1]</p>
+        <p>차량 장갑 보강 | 지식6 손재주7 | 고철4 | [M2/C1]</p>
+        <p>차량 돌파용 범퍼 | 지식7 손재주8 | 고철5 부품1 | [M2/C2]</p>
+      </div>
+    </section>
+
+    <section id="items" class="content-section">
+      <h2>아이템 <span>ITEM DATABASE</span></h2>
+      <div class="item-grid">
+        <div class="data-box">
+          <h3>제니고등학교</h3>
+          <p>배낭[M1], 손전등[T1], 지도[T1], 응급 붕대[S1], 체육 장비[C1], 배터리[T1], 공구 일부[T1], 활[C1], 화살[C1], 무전기[T2], 노트북[T2], 전선[T1], 천 조각[S1]</p>
+        </div>
+        <div class="data-box">
+          <h3>스마트팜</h3>
+          <p>건조식량[S2], 생수[S2], 정수 필터[S3], 농기구[C1], 로프[M1], 천 조각[S1], 활 제작 재료[C1], 연료 일부[M1]</p>
+        </div>
+        <div class="data-box">
+          <h3>무기고</h3>
+          <p>권총[C2], 소총[C3], 산탄총[C3], 저격총[C3], 기관총[C3], 탄약[C2], 수류탄[C3], 방탄복[C2], 방독면[S2], 군용 무전기[T2], 군용 드론[T3/C2], 차량 부품[M2], 연료 드럼통[M3], 공구 세트[T2]</p>
+        </div>
+        <div class="data-box">
+          <h3>중앙병원</h3>
+          <p>항생제[S3], 진통제[S2], 혈액 팩[S2], 수술 키트[S3], 전문 의약품[S3], 의료 장비[T1/S2]</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="hound" class="content-section">
+      <h2>세력: 하운드 <span>HOUND UNIT</span></h2>
+      <div class="hound-grid" id="houndGrid"></div>
+    </section>
+
     <section id="world" class="world-section">
-      <h2>세계관</h2>
+      <h2>세계관 <span>WORLD DATABASE</span></h2>
 
       <div class="world-box">
         <h3>01. 자연이 집어삼킨 아포칼립스</h3>
-        <p>
-          20XX년, 생명촉진 바이러스가 세계를 붕괴시켰다.
-          감염자는 5분 이내에 이성을 잃고 변이하며, 햇빛을 양분으로 삼아 장기간 생존한다.
-          동물 또한 변이되어 번식력과 공격성이 폭증했고, 숲과 폐허에는 광합성 좀비와 기행종 변이체가 출몰한다.
-        </p>
+        <p>20XX년, 좀비 바이러스인 생명촉진 바이러스가 세계를 붕괴시켰다. 감염자는 5분 이내에 이성을 잃고 완전히 변이하며, 햇빛을 양분으로 삼아 무한히 생존한다.</p>
+        <p>인간 감염은 오직 감염자에게 물렸을 경우에만 전염된다. 동물 또한 바이러스에 의해 변이되며 번식력과 공격성이 폭발적으로 증가한다.</p>
+        <p>총기 사용, 차량 운행, 폭발물 사용은 강력한 효과를 내지만 높은 소음을 발생시키며, 이는 주변의 감염자 및 변이 생물을 유인하는 결과를 초래한다.</p>
       </div>
 
       <div class="world-box">
         <h3>02. 특수자치 생존 구역 제니시</h3>
-        <p>
-          제니시는 옛 수원 지역 위에 거대한 외벽과 전기 방벽을 세워 만든 메가 시티다.
-          20년간 스마트팜과 배급제로 유지되었으나, 수뇌부는 도시의 한계를 숨긴 채 시민들을 통제해왔다.
-          사태 이후 태어난 황금세대는 기술·전투 교육을 받은 핵심 생존 후보들이다.
-        </p>
+        <p>제니시는 초기 대응 실패 후 기존 수원 지역 위에 거대한 외벽과 고압 전기 방벽을 세워 만든 철옹성 형태의 메가 시티다.</p>
+        <p>20년 동안 스마트팜과 수경 재배 시스템으로 자급자족을 유지했지만, 수뇌부는 현실에 안주하며 시민들을 배급제로 통제해왔다.</p>
+        <p>사태 이후 태어난 황금세대는 개발자 또는 전투원 교육을 받은 핵심 생존 인력이다.</p>
       </div>
 
       <div class="world-box">
         <h3>03. 멸망의 카운트다운</h3>
-        <p>
-          메인 발전 코어 고갈과 외벽 유지 실패가 임계점에 도달하자,
-          수뇌부는 도시 자폭 시스템을 가동하고 극비 탈출을 시도한다.
-          한 관계자가 폭파 시간을 최대치로 연장했지만, 남은 시간은 단 48시간.
-          긴급 방송 이후 법과 화폐는 붕괴하고 도시는 폭동과 약탈의 무법지대로 변한다.
+        <p>수뇌부는 오래전부터 제니시의 유지가 불가능하다는 사실을 알고 있었다. 메인 발전 코어 고갈과 외벽 유지 실패가 임계점에 도달하자, 도시 전역 자폭 시스템을 활성화한 뒤 극비 탈출을 시도한다.</p>
+        <p>하지만 한 관계자가 마지막 순간 자폭 시간을 최대치인 50시간으로 연장했고, 이미 2시간 가까이 흐른 상태였기에 시민들에게 남은 시간은 48시간뿐이었다.</p>
+        <p class="broadcast-text">
+          "현재 시각 오전 8시 기준.<br>
+          제니시는 48시간 뒤 폭파됩니다."<br><br>
+          "외벽 전력 시스템은 이미 붕괴되었으며,<br>
+          북쪽과 남쪽 방벽 구역으로 변이체가 유입되고 있습니다."<br><br>
+          "모든 시민은 즉시 도시를 탈출하십시오."
         </p>
       </div>
 
       <div class="world-box">
-        <h3>04. 핵심 구역</h3>
-        <p>
-          제니고등학교는 황금세대의 시작 지점이며 동료 영입이 쉽다.
-          스마트팜은 식량과 식수 확보의 핵심지다.
-          무기고는 화력 파밍의 중심이지만 가장 위험한 전장이다.
-          중앙병원에는 의약품과 백신 연구 데이터가 숨겨져 있다.
-        </p>
+        <h3>04. 도시 붕괴</h3>
+        <p>방송 직후 법과 화폐 가치는 즉시 붕괴한다. 군인들조차 시민 통제를 포기하고 탈출과 물자 확보에 뛰어들며, 도시는 폭동·약탈·교통 마비·무장 충돌이 난무하는 무법지대로 변한다.</p>
+        <p>시간이 지날수록 외부 변이체와 좀비들이 도시 내부로 유입되며, 정전·화재·시설 붕괴가 연쇄적으로 발생한다.</p>
       </div>
 
       <div class="world-box">
-        <h3>05. 탈출 목표</h3>
-        <p>
-          플레이어는 48시간 안에 동료, 식량, 무기, 차량을 확보해야 한다.
-          북쪽 게이트, 남쪽 게이트, 지하철 폐선로, 수뇌부 비상 벙커 중 하나를 선택해
-          무너지는 제니시를 탈출해야 한다.
-        </p>
-      </div>
-
-      <div class="world-box">
-        <h3>06. 생존 시스템</h3>
-        <p>
-          체력, 전투력, 기동력, 지식, 리더십, 손재주가 생존 능력을 결정한다.
-          동료는 신뢰도에 따라 목숨을 걸고 돕거나, 물자를 들고 도망치거나, 배신할 수 있다.
-          배낭과 차량 확보 여부에 따라 파밍과 탈출 가능성이 크게 달라진다.
-        </p>
+        <h3>05. 최종 목표</h3>
+        <p>플레이어는 제한된 시간 안에 동료·식량·무기·차량·특수 장비를 확보해야 한다.</p>
+        <p>북쪽 메인 게이트, 남쪽 메인 게이트, 지하철 폐선로, 수뇌부 비상 벙커 통로 중 하나를 선택해 무너지는 제니시를 탈출해야 한다.</p>
       </div>
     </section>
   </main>
 
   <div class="modal" id="cardModal">
     <div class="modal-bg"></div>
-    <img id="modalImg" src="" alt="확대 명함">
+    <img id="modalImg" src="" alt="확대 이미지">
   </div>
 
   <div class="member-modal" id="memberModal">
     <div class="member-modal-bg"></div>
     <div class="member-modal-panel">
       <button class="member-close" type="button">×</button>
-      <h2 id="memberTitle">배치 인원</h2>
+      <h2 id="memberTitle">배치 인원, 자원</h2>
       <div class="member-grid" id="memberGrid"></div>
+      <div class="area-resource" id="areaResource"></div>
+    </div>
+  </div>
+
+  <div class="route-modal" id="routeModal">
+    <div class="route-modal-bg"></div>
+    <div class="route-modal-panel">
+      <button class="route-close" type="button">×</button>
+      <div id="routeDetail"></div>
     </div>
   </div>
 
@@ -171,33 +266,220 @@
 
     const areaMembers = {
       school: {
-        title: "제니고등학교 배치 인원",
-        members: ["Soyoon", "Yuna", "Sohyun", "Taejun", "Minseok", "Sehee"]
+        title: "제니고등학교 배치 인원, 자원",
+        members: ["Soyoon", "Yuna", "Sohyun", "Taejun", "Minseok", "Sehee"],
+        resource: `
+          <h3>제니고등학교 (Jeni High School)</h3>
+          <p><strong>위치:</strong> 도시 중앙</p>
+          <p><strong>구역 구성:</strong> 교실, 급식실, 체육관, 보건실, 교무실, 방송실, 과학실, 컴퓨터실, 창고, 옥상</p>
+          <p><strong>주요 자원:</strong> 소모품(메인), 식량·물(보통), 고철 소량, 부품 소량, 화학물질 소량</p>
+          <p><strong>획득 가능:</strong> 배낭[M1], 손전등[T1], 지도[T1], 응급 붕대[S1], 체육 장비[C1], 배터리[T1], 공구 일부[T1], 활[C1], 화살[C1], 무전기[T2], 노트북[T2], 전선[T1], 천 조각[S1]</p>
+          <p><strong>특수 발견:</strong> 교무실 금고(학교 지도 및 비상 식량[S1]), 방송실(CCTV 및 교내 방송 가능[T2]), 과학실(화학물질 확보 가능[T1]), 컴퓨터실(학생 데이터 및 내부 지도[T2]), 옥상(구조 신호 송출 가능[T1])</p>
+          <p><strong>등장 위험:</strong> 일반 감염체, 교내 생존자 폭동, 야간 스피드형 변이체 출현 가능</p>
+          <p><strong>특징:</strong> 황금세대 학생 및 교사 영입 가능. 초반 생존 안정성이 가장 높은 지역이며 학교 곳곳에 생활 물자가 흩어져 있음.</p>
+        `
       },
       farm: {
-        title: "스마트팜 배치 인원",
-        members: ["Doyoon", "Harin", "Dahye", "Miran"]
+        title: "스마트팜 배치 인원, 자원",
+        members: ["Doyoon", "Harin", "Dahye", "Miran"],
+        resource: `
+          <h3>중앙 스마트팜 지구 (Central Hydroponic Farm)</h3>
+          <p><strong>위치:</strong> 도시 남쪽</p>
+          <p><strong>구역 구성:</strong> 재배동, 곡물 저장고, 냉동 창고, 정수 설비, 농업 관리실, 발전기실, 외곽 온실, 화물 적재 구역</p>
+          <p><strong>주요 자원:</strong> 식량(메인), 물(메인), 소모품(메인)</p>
+          <p><strong>획득 가능:</strong> 건조식량[S2], 생수[S2], 정수 필터[S3], 농기구[C1], 로프[M1], 천 조각[S1], 활 제작 재료[C1], 연료 일부[M1]</p>
+          <p><strong>특수 발견:</strong> 냉동 창고(장기 보관 식량 대량 확보[S3]), 정수 설비(물 지속 확보 가능[S3]), 발전기실(연료 및 배터리 발견 가능[M2/T1]), 외곽 온실(식생형 변이체 출현 가능), 화물 적재 구역(운송 차량 발견 가능[M2])</p>
+          <p><strong>등장 위험:</strong> 일반 감염체, 식생형 변이체, 야간 스피드형 변이체, 약탈 세력</p>
+          <p><strong>특징:</strong> 장기 생존 핵심 지역. 폭동 전파가 비교적 늦지만 시간이 지날수록 식생형 변이체 증가.</p>
+        `
       },
       armory: {
-        title: "무기고 배치 인원",
-        members: ["Dosik", "Cheolwoo", "Sarang"]
+        title: "무기고 배치 인원, 자원",
+        members: ["Dosik", "Cheolwoo", "Sarang"],
+        resource: `
+          <h3>방위군 무기고 (Military Armory)</h3>
+          <p><strong>위치:</strong> 도시 북쪽</p>
+          <p><strong>구역 구성:</strong> 군용 보관고, 탄약 창고, 차량 정비 구역, 지휘실, 경비 초소, 폐쇄 구역, 외곽 검문소, 무기 시험장</p>
+          <p><strong>주요 자원:</strong> 고철(메인), 부품(메인), 화학물질 소량</p>
+          <p><strong>획득 가능:</strong> 권총[C2], 소총[C3], 산탄총[C3], 저격총[C3], 기관총[C3], 탄약[C2], 수류탄[C3], 방탄복[C2], 방독면[S2], 군용 무전기[T2], 군용 드론[T3/C2], 차량 부품[M2], 연료 드럼통[M3], 공구 세트[T2]</p>
+          <p><strong>특수 발견:</strong> 군용 보관고(고급 총기 및 대량 탄약[C3]), 차량 정비 구역(차량 및 연료 확보 가능[M3]), 지휘실(전술 지도 및 군용 센서[T2]), 폐쇄 구역(적외선 고글[T2/C1] 및 군용 드론[T3/C2]), 무기 시험장(중화기 및 실험 장비[C3])</p>
+          <p><strong>등장 위험:</strong> 일반 감염체 대량 출현, 파워형 변이체, 무장 폭도, 탈영 군인 세력</p>
+          <p><strong>특징:</strong> 화력 및 차량 파밍 핵심 지역. 수뇌부 경비대와 시민들이 충돌하며 도시 내 가장 위험한 전쟁터 수준의 구역.</p>
+        `
       },
       hospital: {
-        title: "중앙병원 배치 인원",
-        members: ["Seoyoon", "Seokyung", "Jinho"]
+        title: "중앙병원 배치 인원, 자원",
+        members: ["Seoyoon", "Seokyung", "Jinho"],
+        resource: `
+          <h3>중앙병원 (Central Hospital)</h3>
+          <p><strong>위치:</strong> 도시 서쪽</p>
+          <p><strong>구역 구성:</strong> 응급실, 입원 병동, 수술실, 약품 창고, 연구실, 영안실, 특수 연구 구역, 옥상 헬기장, 지하 격리실</p>
+          <p><strong>주요 자원:</strong> 화학물질(메인), 소모품, 부품 소량</p>
+          <p><strong>획득 가능:</strong> 항생제[S3], 진통제[S2], 혈액 팩[S2], 수술 키트[S3], 전문 의약품[S3], 의료 장비[T1/S2]</p>
+          <p><strong>특수 발견:</strong> 약품 창고(항생제 및 전문 의약품 대량 확보[S3]), 수술실(고급 의료 장비[S3/T1]), 특수 연구실 금고(백신 데이터 외장 하드[T8/S8]), 특수 연구 구역(추적 센서[T2] 및 군용 센서[T2]), 옥상 헬기장(군용 보급품 잔해[C1/M1]), 지하 격리실(실험체 흔적 발견 가능)</p>
+          <p><strong>등장 위험:</strong> 일반 감염체, 병원 변이체, 파워형 변이체, 의료진 감염체</p>
+          <p><strong>특징:</strong> 의사 및 간호사 영입 가능. 고급 의약품 확보 가능하며 백신 데이터 확보 시 하운드의 추적 대상이 됨.</p>
+        `
       }
     };
 
-    const cards = document.querySelectorAll('.character-grid img');
+    const routeInfoData = {
+      north: `
+        <h2>북쪽 메인 게이트</h2>
+        <p><strong>방향:</strong> 인천공항 방향</p>
+        <p>가장 직관적이고 빠르게 도시 밖으로 나갈 수 있는 제니시 최대 규모의 군사 관문.</p>
+        <p>방벽 붕괴 이후 탈출하려는 시민, 폭도, 군인, 변이체들이 한꺼번에 몰려 극심한 교통 체증과 혼란이 발생한다.</p>
+        <p><strong>엔딩 필요 물자:</strong><br>식량5 / 물5 / 의약품2</p>
+        <p><strong>엔딩 필요 수치:</strong><br>C50 이상<br>S15 이상<br>M10 이상<br>T5 이상</p>
+        <p><strong>차량:</strong> 선택</p>
+        <p><strong>등장 위협:</strong><br>일반 감염체 대량 출현,<br>파워형 변이체 다수 출현,<br>무장 폭도 및 탈영 군인</p>
+        <p><strong>최종 위협:</strong><br>변이 곰</p>
+        <p><strong>특징:</strong><br>가장 빠른 탈출 루트지만 도시 내 최악의 전면전이 발생하는 구역. 총기 및 폭발물 사용 시 대규모 좀비 유입 가능.</p>
+      `,
+      south: `
+        <h2>남쪽 메인 게이트</h2>
+        <p><strong>방향:</strong> 부산 방향</p>
+        <p>제니시 남부 외곽과 연결된 장거리 남하 루트.</p>
+        <p>북쪽보다 혼잡도는 낮지만 외곽 변이체 밀집도가 높고, 장거리 이동으로 인해 식량과 연료 부족 위험이 매우 크다.</p>
+        <p><strong>엔딩 필요 물자:</strong><br>식량12 / 물12 / 의약품3 / 연료10 이상</p>
+        <p><strong>엔딩 필요 수치:</strong><br>S38 이상<br>M32 이상<br>C15 이상<br>T6 이상</p>
+        <p><strong>차량:</strong> 필수</p>
+        <p><strong>등장 위협:</strong><br>일반 감염체,<br>스피드형 변이체,<br>외곽 약탈자 및 탈영 군인,<br>야간 습격 위험 증가</p>
+        <p><strong>최종 위협:</strong><br>변이 호랑이</p>
+        <p><strong>특징:</strong><br>전면 충돌은 비교적 적지만, 장거리 이동 과정에서 굶주림·연료 부족·외곽 변이체 위협이 매우 큼.</p>
+      `,
+      subway: `
+        <h2>지하철 폐선로</h2>
+        <p><strong>방향:</strong> 부산 방향</p>
+        <p>동쪽 외벽 너머로 이어지는 도시 하부 물자 운송 통로이자 은밀 탈출 루트.</p>
+        <p>지상을 벗어나 이동하기 때문에 대규모 좀비 군집을 비교적 피할 수 있지만, 좁은 터널 내부에는 일반 감염체와 위험한 특이개체들이 존재한다.</p>
+        <p><strong>엔딩 필요 물자:</strong><br>식량4 / 물4 / 의약품2 / 배터리2 이상</p>
+        <p><strong>엔딩 필요 수치:</strong><br>T38 이상<br>C24 이상<br>S12 이상<br>M6 이상</p>
+        <p><strong>차량:</strong><br>유지보수용 소형 궤도 차량만 가능</p>
+        <p><strong>등장 위협:</strong><br>일반 감염체,<br>스피드형 변이체,<br>어둠 속 특이개체</p>
+        <p><strong>최종 위협:</strong><br>특이개체 보스</p>
+        <p><strong>특징:</strong><br>지상보다 좀비 밀집도가 낮아 은밀 이동 가능. 하지만 좁고 어두운 구조로 인해 특이개체 조우 위험이 매우 높다.</p>
+      `,
+      bunker: `
+        <h2>수뇌부 비상 벙커 통로</h2>
+        <p><strong>방향:</strong> 인천공항 방향</p>
+        <p>서쪽 외벽 너머로 이어지는 정부 고위층 전용 극비 탈출 루트.</p>
+        <p>구조 자체는 가장 안전하고 관리 상태도 뛰어나지만, 현재는 수뇌부와 하운드 부대가 우선적으로 사용 중이다.</p>
+        <p><strong>엔딩 필요 물자:</strong><br>식량3 / 물3 / 의약품2</p>
+        <p><strong>엔딩 필요 수치:</strong><br>T42 이상<br>C30 이상<br>S14 이상<br>M4 이상</p>
+        <p><strong>차량:</strong> 불가능</p>
+        <p><strong>추가 조건:</strong><br>출입 인증 키카드 확보 또는 해킹 가능 인원 필요</p>
+        <p><strong>등장 위협:</strong><br>하운드 부대,<br>자동 방어 시스템,<br>군용 감시 장비</p>
+        <p><strong>최종 위협:</strong><br>변이 늑대</p>
+        <p><strong>특징:</strong><br>가장 안전한 탈출 루트. 하지만 하운드 부대와 직접 충돌 가능성이 매우 높으며, 일반 생존자가 접근하기 가장 어려운 특수 루트.</p>
+      `
+    };
+
+    const zombieData = [
+      {
+        name: "타이탄 / Titan",
+        img: "./images/zombie/Titan.png",
+        desc: "거대한 체구를 가졌음에도 비정상적인 속도로 돌진하는 강화 변이체. 근육 조직이 과도하게 증식되어 일반 감염체보다 훨씬 빠른 이동 속도를 보이며, 강한 돌진으로 차량·방어선을 무너뜨린다.",
+        area: "북쪽 메인 게이트, 외곽 검문소, 무기고 주변"
+      },
+      {
+        name: "브루트 / Brute",
+        img: "./images/zombie/Brute.png",
+        desc: "순수 파괴력에 특화된 파워형 변이체. 강화된 상체와 두꺼운 피부를 지녔으며, 총격에도 쉽게 쓰러지지 않는다. 근접 공격 한 번만으로 인간의 뼈를 부술 정도의 괴력을 가짐.",
+        area: "무기고, 병원 격리실, 붕괴된 도심 지역"
+      },
+      {
+        name: "아이언 베어 / IronBear",
+        img: "./images/zombie/IronBear.png",
+        desc: "감염된 곰이 변이된 초대형 포식자. 강화된 피부와 거대한 근육 조직을 가지고 있으며, 차량을 뒤집을 정도의 힘을 지녔다. 총기 화력에도 쉽게 제압되지 않는 최상위 위험 개체.",
+        area: "북쪽 외벽 주변, 산림 지대, 북쪽 메인 게이트"
+      },
+      {
+        name: "팽 / Fang",
+        img: "./images/zombie/Fang.png",
+        desc: "군용 추적견이 감염되어 변이된 늑대형 개체. 빠른 속도와 뛰어난 후각으로 생존자를 추적하며, 무리 단위로 움직이는 경우가 많다. 야간 추적 능력이 매우 뛰어남.",
+        area: "수뇌부 비상 벙커 통로, 외곽 폐건물, 서쪽 외벽 지역"
+      },
+      {
+        name: "클로 / Claw",
+        img: "./images/zombie/Claw.png",
+        desc: "호랑이가 변이된 포식형 개체. 어둠 속에서 은밀하게 접근하며, 강력한 도약 공격으로 목표를 순식간에 제압한다. 빛이 적은 환경일수록 더욱 위험해진다.",
+        area: "남쪽 외곽, 폐허 지역, 남쪽 메인 게이트"
+      },
+      {
+        name: "러커 / Lurker",
+        img: "./images/zombie/Lurker.png",
+        desc: "폐건물과 어두운 공간에 숨어 생존자를 기습하는 일반 감염체. 움직임이 느리지만 은신 성향이 강하며, 좁은 공간과 사각지대에서 자주 발견된다.",
+        area: "학교 내부, 지하 시설, 폐건물"
+      },
+      {
+        name: "하울러 / Howler",
+        img: "./images/zombie/Howler.png",
+        desc: "비명과 울음소리로 주변 감염체를 유인하는 특수 감염체. 직접적인 전투력은 낮지만, 발견 즉시 대규모 감염체 무리를 불러들일 위험이 있다.",
+        area: "도심 거리, 붕괴된 주거 지역, 병원 주변"
+      },
+      {
+        name: "아말감 / Amalgam",
+        img: "./images/zombie/Amalgam.png",
+        desc: "수많은 감염체 조직이 뒤엉켜 탄생한 정체불명의 거대 변이체. 촉수처럼 변형된 신체 기관과 뒤틀린 육체를 이용해 공격하며, 좁은 공간 내부를 기어 다니며 사냥한다. 일반적인 생물 구조와 전혀 다른 형태를 보인다.",
+        area: "지하철 폐선로, 지하 격리 시설, 암흑 구역"
+      }
+    ];
+
+    const houndData = [
+      {
+        name: "알파 / Alpha",
+        img: "./images/hound/Alpha.png",
+        desc: "하운드 리더. 전장 상황 판단 및 하운드 부대 통솔 가능.",
+        personality: "냉혹",
+        location: "수뇌부 비상 벙커 통로",
+        mission: "최후 탈출 루트 통제 및 하운드 부대 지휘",
+        stat: "체력8 / 전투력9 / 기동력7 / 지식7 / 리더쉽9 / 손재주5",
+        item: "전술 돌격소총, 권총 1정, 군용 단검, 암시장 무전기, 출입 인증 키카드"
+      },
+      {
+        name: "베타 / Beta",
+        img: "./images/hound/Beta.png",
+        desc: "하운드. 도주 생존자 색출 및 유인 작전 수행.",
+        personality: "광기",
+        location: "수뇌부 비상 벙커 통로",
+        mission: "도주 생존자 색출 및 유인 작전 수행",
+        stat: "체력6 / 전투력7 / 기동력7 / 지식5 / 리더쉽2 / 손재주5",
+        item: "전기 충격봉, 소총 1정, 섬광탄 2개, 방독면"
+      },
+      {
+        name: "감마 / Gamma",
+        img: "./images/hound/Gamma.png",
+        desc: "하운드. 입구 정면 방어 및 침입자 제거.",
+        personality: "공격적",
+        location: "수뇌부 비상 벙커 통로",
+        mission: "입구 정면 방어 및 침입자 제거",
+        stat: "체력9 / 전투력10 / 기동력4 / 지식3 / 리더쉽2 / 손재주3",
+        item: "중형 해머, 산탄총, 중장갑 방탄복, 수류탄 2개, 철제 보호 마스크"
+      },
+      {
+        name: "델타 / Delta",
+        img: "./images/hound/Delta.png",
+        desc: "하운드. 감시 카메라 및 이동 경로 추적 수행.",
+        personality: "계산형",
+        location: "수뇌부 비상 벙커 통로",
+        mission: "감시 카메라 및 이동 경로 추적 수행",
+        stat: "체력5 / 전투력5 / 기동력7 / 지식8 / 리더쉽4 / 손재주7",
+        item: "휴대용 탐지기, 소음기 권총, 전술 태블릿, 추적 센서, 적외선 고글"
+      }
+    ];
+
     const cardModal = document.getElementById('cardModal');
     const modalImg = document.getElementById('modalImg');
 
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        cardModal.classList.add('active');
-        modalImg.src = card.src;
-        modalImg.alt = card.alt;
-      });
+    function openImage(src, alt) {
+      cardModal.classList.add('active');
+      modalImg.src = src;
+      modalImg.alt = alt;
+    }
+
+    document.querySelectorAll('.character-grid img').forEach(card => {
+      card.addEventListener('click', () => openImage(card.src, card.alt));
     });
 
     cardModal.addEventListener('click', () => {
@@ -209,6 +491,7 @@
     const memberModal = document.getElementById('memberModal');
     const memberTitle = document.getElementById('memberTitle');
     const memberGrid = document.getElementById('memberGrid');
+    const areaResource = document.getElementById('areaResource');
     const memberClose = document.querySelector('.member-close');
 
     areaCards.forEach(areaCard => {
@@ -218,6 +501,7 @@
 
         memberTitle.textContent = area.title;
         memberGrid.innerHTML = "";
+        areaResource.innerHTML = area.resource;
 
         area.members.forEach(name => {
           const img = document.createElement('img');
@@ -225,9 +509,7 @@
           img.alt = name;
           img.addEventListener('click', (event) => {
             event.stopPropagation();
-            cardModal.classList.add('active');
-            modalImg.src = img.src;
-            modalImg.alt = img.alt;
+            openImage(img.src, img.alt);
           });
           memberGrid.appendChild(img);
         });
@@ -239,6 +521,7 @@
     function closeMemberModal() {
       memberModal.classList.remove('active');
       memberGrid.innerHTML = "";
+      areaResource.innerHTML = "";
     }
 
     memberClose.addEventListener('click', closeMemberModal);
@@ -247,6 +530,67 @@
       if (event.target.classList.contains('member-modal-bg')) {
         closeMemberModal();
       }
+    });
+
+    const routeModal = document.getElementById('routeModal');
+    const routeDetail = document.getElementById('routeDetail');
+    const routeClose = document.querySelector('.route-close');
+
+    document.querySelectorAll('.route-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const routeKey = card.dataset.route;
+        routeDetail.innerHTML = routeInfoData[routeKey];
+        routeModal.classList.add('active');
+      });
+    });
+
+    function closeRouteModal() {
+      routeModal.classList.remove('active');
+      routeDetail.innerHTML = "";
+    }
+
+    routeClose.addEventListener('click', closeRouteModal);
+
+    routeModal.addEventListener('click', event => {
+      if (event.target.classList.contains('route-modal-bg')) {
+        closeRouteModal();
+      }
+    });
+
+    const zombieGrid = document.getElementById('zombieGrid');
+    zombieData.forEach(zombie => {
+      const card = document.createElement('div');
+      card.className = 'info-card';
+      card.innerHTML = `
+        <img src="${zombie.img}" alt="${zombie.name}">
+        <div class="info-body">
+          <h3>${zombie.name}</h3>
+          <p>${zombie.desc}</p>
+          <p><strong>출몰 지역:</strong><br>${zombie.area}</p>
+        </div>
+      `;
+      card.querySelector('img').addEventListener('click', () => openImage(zombie.img, zombie.name));
+      zombieGrid.appendChild(card);
+    });
+
+    const houndGrid = document.getElementById('houndGrid');
+    houndData.forEach(hound => {
+      const card = document.createElement('div');
+      card.className = 'info-card';
+      card.innerHTML = `
+        <img src="${hound.img}" alt="${hound.name}">
+        <div class="info-body">
+          <h3>${hound.name}</h3>
+          <p>${hound.desc}</p>
+          <p><strong>성격:</strong><br>${hound.personality}</p>
+          <p><strong>현재 위치:</strong><br>${hound.location}</p>
+          <p><strong>임무:</strong><br>${hound.mission}</p>
+          <p><strong>스탯:</strong><br>${hound.stat}</p>
+          <p><strong>소지품:</strong><br>${hound.item}</p>
+        </div>
+      `;
+      card.querySelector('img').addEventListener('click', () => openImage(hound.img, hound.name));
+      houndGrid.appendChild(card);
     });
   </script>
 

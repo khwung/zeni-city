@@ -28,10 +28,10 @@ body {
   z-index: 999;
 
   display: grid;
-  grid-template-columns: 260px 1fr 260px;
+  grid-template-columns: 170px 1fr 170px;
   align-items: center;
 
-  padding: 0 38px;
+  padding: 0 28px;
   background: rgba(0, 0, 0, 0.9);
   border-bottom: 1px solid rgba(150, 0, 0, 0.95);
   backdrop-filter: blur(8px);
@@ -39,7 +39,7 @@ body {
 
 .nav-title {
   color: #999;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: -1px;
 }
@@ -47,13 +47,13 @@ body {
 .nav-links {
   display: flex;
   justify-content: center;
-  gap: 70px;
+  gap: 34px;
 }
 
 .nav-links a {
   color: #aaa;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   transition: 0.2s;
   white-space: nowrap;
 }
@@ -65,12 +65,12 @@ body {
 
 .start-btn {
   justify-self: end;
-  padding: 8px 18px;
+  padding: 8px 14px;
   color: #d9352b;
   border: 1px solid rgba(150, 0, 0, 0.75);
   border-radius: 6px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 12px;
   background: rgba(50, 0, 0, 0.45);
   white-space: nowrap;
 }
@@ -112,8 +112,8 @@ body {
 
 .area-card button {
   position: absolute;
-  left: 24px;
-  right: 24px;
+  left: 20px;
+  right: 20px;
   bottom: 16px;
   height: 31px;
 
@@ -121,7 +121,8 @@ body {
   border-radius: 4px;
   background: #5a1711;
   color: #f1e5df;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -148,11 +149,34 @@ body {
   gap: 20px;
 }
 
+.route-card {
+  border: 1px solid rgba(160, 20, 20, 0.75);
+  background: rgba(10, 0, 0, 0.55);
+  transition: 0.25s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.route-card:hover {
+  transform: translateY(-6px);
+  filter: brightness(1.12) drop-shadow(0 0 14px rgba(180, 20, 20, 0.65));
+}
+
+.route-card img {
+  width: 100%;
+  display: block;
+  filter: grayscale(1) brightness(1.15);
+}
+
+.route-card:hover img {
+  filter: grayscale(0) brightness(1.25) drop-shadow(0 0 14px rgba(180, 20, 20, 0.65));
+}
+
 /* 동료 정보 명함 */
 .character-grid {
   position: absolute;
   left: 36px;
-  top: 1585px;
+  top: 1580px;
   width: 1168px;
 
   display: grid;
@@ -160,18 +184,132 @@ body {
   gap: 14px;
 }
 
-.route-grid img,
 .character-grid img {
   width: 100%;
   display: block;
   transition: 0.25s ease;
 }
 
-.route-grid img:hover,
 .character-grid img:hover {
   transform: translateY(-6px);
   filter: brightness(1.18) drop-shadow(0 0 14px rgba(180, 20, 20, 0.65));
   cursor: pointer;
+}
+
+/* 추가 섹션 */
+.content-section {
+  position: relative;
+  width: 1168px;
+  margin: 0 auto;
+  padding: 56px 0 0;
+}
+
+#zombies {
+  margin-top: 340px;
+}
+
+.content-section h2,
+.world-section h2 {
+  color: #b02a20;
+  font-size: 28px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid rgba(150, 0, 0, 0.8);
+  padding-bottom: 14px;
+}
+
+.content-section h2 span,
+.world-section h2 span {
+  margin-left: 12px;
+  color: #5d4a46;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.zombie-grid,
+.hound-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.info-card {
+  border: 1px solid rgba(150, 0, 0, 0.78);
+  background: rgba(15, 0, 0, 0.44);
+  transition: 0.25s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(160, 0, 0, 0.45);
+}
+
+.info-card img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.info-body {
+  padding: 16px;
+}
+
+.info-body h3 {
+  margin: 0 0 12px;
+  color: #e24a3e;
+  font-size: 18px;
+}
+
+.info-body p {
+  margin: 0 0 10px;
+  color: #cfcfcf;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.info-body strong {
+  color: #ff6a5c;
+}
+
+/* 제작 / 아이템 */
+.data-box,
+.craft-list {
+  border: 1px solid rgba(150, 0, 0, 0.75);
+  background: rgba(20, 0, 0, 0.28);
+  padding: 22px 26px;
+  margin-bottom: 18px;
+}
+
+.data-box h3,
+.craft-list h3 {
+  margin: 0 0 12px;
+  color: #d63b2e;
+  font-size: 18px;
+}
+
+.data-box p,
+.craft-list p {
+  margin: 0 0 8px;
+  color: #cfcfcf;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.craft-list h3 {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(150, 0, 0, 0.45);
+}
+
+.craft-list h3:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
 }
 
 /* 세계관 */
@@ -179,16 +317,7 @@ body {
   position: relative;
   width: 1168px;
   margin: 0 auto;
-  padding: 60px 0 140px;
-  margin-top: 600px;
-}
-
-.world-section h2 {
-  color: #b02a20;
-  font-size: 28px;
-  margin-bottom: 28px;
-  border-bottom: 1px solid rgba(150, 0, 0, 0.8);
-  padding-bottom: 14px;
+  padding: 56px 0 140px;
 }
 
 .world-box {
@@ -211,7 +340,19 @@ body {
   line-height: 1.75;
 }
 
-/* 명함 단일 확대 */
+.world-box p + p {
+  margin-top: 12px;
+}
+
+.broadcast-text {
+  color: #ffb0a8 !important;
+  padding: 16px 18px;
+  border-left: 3px solid rgba(220, 40, 30, 0.9);
+  background: rgba(80, 0, 0, 0.28);
+  font-weight: 700;
+}
+
+/* 이미지 확대 */
 .modal {
   position: fixed;
   inset: 0;
@@ -238,10 +379,10 @@ body {
   width: min(900px, 90vw);
   max-height: 88vh;
   object-fit: contain;
-  filter: drop-shadow(0 0 30px rgba(0, 255, 230, 0.25));
+  filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.25));
 }
 
-/* 배치 인원 모달 */
+/* 배치 인원 / 자원 모달 */
 .member-modal {
   position: fixed;
   inset: 0;
@@ -316,6 +457,96 @@ body {
   filter: brightness(1.18) drop-shadow(0 0 14px rgba(0, 255, 230, 0.35));
 }
 
+.area-resource {
+  margin-top: 28px;
+  padding: 22px;
+  border: 1px solid rgba(150, 0, 0, 0.75);
+  background: rgba(20, 0, 0, 0.35);
+}
+
+.area-resource h3 {
+  margin: 0 0 16px;
+  color: #e24a3e;
+  font-size: 20px;
+}
+
+.area-resource p {
+  margin: 0 0 10px;
+  color: #d4d4d4;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.area-resource strong {
+  color: #ff6a5c;
+}
+
+/* 탈출 루트 모달 */
+.route-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2600;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.route-modal.active {
+  display: flex;
+}
+
+.route-modal-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.route-modal-panel {
+  position: relative;
+  z-index: 2;
+  width: min(760px, 92vw);
+  max-height: 86vh;
+  overflow-y: auto;
+  padding: 30px;
+  border: 1px solid rgba(180, 20, 20, 0.85);
+  background: rgba(5, 5, 5, 0.96);
+  box-shadow: 0 0 40px rgba(160, 0, 0, 0.35);
+}
+
+.route-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(180, 20, 20, 0.8);
+  background: rgba(60, 0, 0, 0.7);
+  color: #eee;
+  font-size: 24px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+#routeDetail h2 {
+  margin: 0 0 20px;
+  color: #e24a3e;
+  font-size: 26px;
+  border-bottom: 1px solid rgba(150, 0, 0, 0.75);
+  padding-bottom: 14px;
+}
+
+#routeDetail p {
+  margin: 0 0 12px;
+  color: #d4d4d4;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+#routeDetail strong {
+  color: #ff6a5c;
+}
+
 /* 모바일 / 태블릿 */
 @media (max-width: 768px) {
   body {
@@ -373,11 +604,11 @@ body {
     gap: 16px;
   }
 
-  .area-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .route-grid {
+  .area-grid,
+  .route-grid,
+  .zombie-grid,
+  .hound-grid,
+  .item-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -386,33 +617,45 @@ body {
     gap: 14px;
   }
 
-  .area-card button {
-    left: 18px;
-    right: 18px;
-    bottom: 12px;
-    height: 28px;
-    font-size: 13px;
+  #zombies {
+    margin-top: 36px;
   }
 
+  .content-section,
   .world-section {
     width: calc(100% - 28px);
     margin: 36px auto 0;
-    padding: 40px 0 90px;
+    padding: 40px 0 0;
   }
 
+  .area-card button {
+    left: 14px;
+    right: 14px;
+    bottom: 12px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .content-section h2,
   .world-section h2 {
     font-size: 24px;
   }
 
-  .world-box {
+  .world-box,
+  .data-box,
+  .craft-list {
     padding: 18px 16px;
   }
 
-  .world-box h3 {
+  .world-box h3,
+  .data-box h3,
+  .craft-list h3 {
     font-size: 16px;
   }
 
-  .world-box p {
+  .world-box p,
+  .data-box p,
+  .craft-list p {
     font-size: 14px;
     line-height: 1.7;
   }
@@ -440,11 +683,22 @@ body {
 /* 아주 작은 폰 */
 @media (max-width: 430px) {
   .area-grid,
-  .route-grid {
+  .route-grid,
+  .zombie-grid,
+  .hound-grid,
+  .item-grid {
     grid-template-columns: 1fr;
   }
 
   .nav-links {
     gap: 16px;
   }
+}
+
+
+.info-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center top;
 }
