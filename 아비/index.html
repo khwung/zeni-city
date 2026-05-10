@@ -413,22 +413,46 @@ const mapImageData = {
   bunker: "./images/routes/route-bunker.png"
 };
 
-
-
 document.querySelectorAll('.map-click').forEach(btn => {
   btn.addEventListener('click', () => {
     const key = btn.dataset.map;
-    const imgSrc = mapImageData[key];
 
-    if (!imgSrc) return;
+    if (areaMembers[key]) {
+      const area = areaMembers[key];
 
-    routeDetail.innerHTML = `
-      <div class="only-map-card">
-        <img src="${imgSrc}" alt="${key}">
-      </div>
-    `;
+      memberTitle.textContent = area.title;
+      memberGrid.innerHTML = "";
+      areaResource.innerHTML = `
+        <div class="map-detail-image">
+          <img src="${mapImageData[key]}" alt="${area.title}">
+        </div>
+        ${area.resource}
+      `;
 
-    routeModal.classList.add('active');
+      area.members.forEach(name => {
+        const img = document.createElement('img');
+        img.src = characterData[name];
+        img.alt = name;
+        img.addEventListener('click', (event) => {
+          event.stopPropagation();
+          openImage(img.src, img.alt);
+        });
+        memberGrid.appendChild(img);
+      });
+
+      memberModal.classList.add('active');
+      return;
+    }
+
+    if (routeInfoData[key]) {
+      routeDetail.innerHTML = `
+        <div class="map-detail-image">
+          <img src="${mapImageData[key]}" alt="탈출 루트">
+        </div>
+        ${routeInfoData[key]}
+      `;
+      routeModal.classList.add('active');
+    }
   });
 });
 

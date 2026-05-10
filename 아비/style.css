@@ -242,22 +242,3 @@ body { overflow-x: hidden; color: #ddd; font-family: Arial, sans-serif; }
   border-radius:14px;
   display:block;
 }
-
-.route-modal-panel{
-  width:auto;
-  max-width:92vw;
-  padding:18px;
-}
-
-.only-map-card{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.only-map-card img {
-  width: min(1600px, 96vw);
-  max-height: 94vh;
-  object-fit: contain;
-  image-rendering: auto;
-}
